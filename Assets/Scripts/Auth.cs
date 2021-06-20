@@ -24,12 +24,12 @@ public class Auth : MonoBehaviour
     public GameObject ListUser;
 
     public GameObject _loading;
-    // Start is called before the first frame update
+    
     void Start()
     {
         _auth = this;
     }
-
+//Action Button login
     public void Login()
     {
         _loading.SetActive(true);
@@ -62,10 +62,10 @@ public class Auth : MonoBehaviour
         }
         else
         {
-            print("Nooo");
+            print("Error");
         }
     }
-
+//Get List user and Match with calss Users
     IEnumerator Getuser()
     {
         using (UnityWebRequest webRequest = UnityWebRequest.Get(URLUserList+_idPage.ToString()))

@@ -25,8 +25,8 @@
       <Path>.git</Path>
       <Path>.idea</Path>
       <Path>.vscode</Path>
-      <Path>Build</Path>
       <Path>Logs</Path>
+      <Path>Temp</Path>
       <Path>UnityPackageManager</Path>
       <Path>UserSettings</Path>
       <Path>obj</Path>

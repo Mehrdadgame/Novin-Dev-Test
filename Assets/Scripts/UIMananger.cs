@@ -18,6 +18,7 @@ public class UIMananger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Set Data user in UI
         for (int i = 0; i < Auth._auth._users.data.Count; i++)
         {
             GameObject prefab = Instantiate<GameObject>(PrefabUI, Parent);
@@ -27,9 +28,9 @@ public class UIMananger : MonoBehaviour
             StartCoroutine(GetTextureRequest(Auth._auth._users.data[i].avatar, (response) => {
                 prefab.GetComponentsInChildren<Image>()[2].sprite = response;
             
-                // spriteRenderer.sprite = targetSprite;
+              
             })); 
-            
+            //Add action to Button Details
             prefab.GetComponentInChildren<Button>().onClick.AddListener(delegate
                 {
                     PageDetails.SetActive(true);
@@ -46,10 +47,7 @@ public class UIMananger : MonoBehaviour
        
     }
 
-    public void ShowDetails()
-    {
-        
-    }
+  
 
     IEnumerator GetTextureRequest(string url, System.Action<Sprite> callback)
     {
