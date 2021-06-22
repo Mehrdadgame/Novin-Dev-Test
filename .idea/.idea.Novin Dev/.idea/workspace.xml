@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2686ac9f-562c-4ede-92b7-798c30c48016" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Novin Dev/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Novin Dev/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Novin Dev/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Novin Dev/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scene/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scene/Main.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Auth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Auth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIMananger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIMananger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +26,8 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Users.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SetIdUser.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Auth.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UIMananger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Auth.cs" />
       </list>
     </option>
   </component>
@@ -72,6 +72,7 @@
       <workItem from="1624206285070" duration="1634000" />
       <workItem from="1624211209362" duration="12988000" />
       <workItem from="1624226259989" duration="169000" />
+      <workItem from="1624382406333" duration="5536000" />
     </task>
     <servers />
   </component>

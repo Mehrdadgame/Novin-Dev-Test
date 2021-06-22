@@ -4,7 +4,7 @@ using System.Text;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class Auth : MonoBehaviour
 {
@@ -24,7 +24,8 @@ public class Auth : MonoBehaviour
     public GameObject ListUser;
 
     public GameObject _loading;
-    
+
+    public Text massgeError;
     void Start()
     {
         _auth = this;
@@ -32,10 +33,22 @@ public class Auth : MonoBehaviour
 //Action Button login
     public void Login()
     {
+        if (_email.text == "" || _pass.text == "")
+        {
+            StartCoroutine(ShowError("Fill in the fields "));
+            return;
+            
+        }
         _loading.SetActive(true);
         StartCoroutine(makeRequest());
     }
 
+    IEnumerator ShowError(string error)
+    {
+        massgeError.text = error;
+        yield return  new WaitForSeconds(2);
+        massgeError.text = "";
+    }
     string authenticate(string username, string password)
     {
         string auth = username + ":" + password;
@@ -46,23 +59,21 @@ public class Auth : MonoBehaviour
 
     IEnumerator makeRequest()
     {
-        string authorization = authenticate(_email.text, _pass.text);
-        string url = URL;
-
-
-        UnityWebRequest www = UnityWebRequest.Get(url);
-        www.SetRequestHeader("Login", authorization);
-
-        yield return www.Send();
-        if (www.isDone)
+        WWWForm form = new WWWForm();
+        form.AddField("email", _email.text.Trim());
+        form.AddField("password", _pass.text.Trim());
+        UnityWebRequest www = UnityWebRequest.Post(URL, form);
+        www.SetRequestHeader("token", "QpwL5tke4Pnpja7X4");
+        yield return www.SendWebRequest();
+        if (www.isNetworkError || www.isHttpError)
         {
-          PageLogin.SetActive(false);
-            StartCoroutine(Getuser());
-         
+           _loading.SetActive(false);
+            StartCoroutine(ShowError(www.error));
         }
         else
         {
-            print("Error");
+            StartCoroutine(Getuser());
+            
         }
     }
 //Get List user and Match with calss Users
